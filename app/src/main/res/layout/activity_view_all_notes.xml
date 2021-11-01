@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewAllNotesActivity"
+    android:background="@drawable/night_sky">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="Notes"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:id="@+id/notes"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/no_available_notes"
+        android:layout_below="@id/notes"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:text="No Notes to display"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:layout_margin="10dp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/note_recycler"
+        android:layout_below="@id/no_available_notes"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="20dp"
+        android:visibility="gone"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addNoteBtn"
+        android:layout_below="@id/note_recycler"
+        android:text="Add"
+        />
+</RelativeLayout>

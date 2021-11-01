@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTripActivity"
+    android:background="@drawable/night_sky">
+
+    <TextView
+        android:id="@+id/headingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffffff"
+        android:text="Add a Trip"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+      />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headingText"
+        android:layout_marginTop="10dp">
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/destinationHeading"
+        android:text="Enter your destination : "
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="10dp"
+        />
+
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainLocationText"
+        android:layout_below="@id/destinationHeading"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:background="@drawable/edit_text_border"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="10dp"
+        />
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/dataPickerHeading"
+             android:layout_below="@id/mainLocationText"
+             android:layout_marginTop="10dp"
+             android:textColor="@color/white"
+             android:text="Enter the start date: "
+             android:textSize="20dp"/>
+
+         <CalendarView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/trip_calendar"
+             android:layout_below="@id/dataPickerHeading"
+             android:layout_margin="10dp"
+             android:theme="@style/CalenderViewCustom"
+             android:dateTextAppearance="@style/CalenderViewDateCustomText"
+             android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+             />
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/addLocationHeading"
+             android:layout_below="@id/trip_calendar"
+             android:layout_marginTop="10dp"
+             android:textColor="@color/white"
+             android:text="Add some locations : "
+             android:textSize="20dp"/>
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/locationRecycler"
+             android:layout_below="@id/addLocationHeading"
+             android:layout_marginTop="10dp"
+             android:visibility="gone"/>
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/location_add_group"
+             android:layout_marginTop="10dp"
+             android:layout_below="@id/locationRecycler"
+             android:background="@color/black">
+
+             <EditText
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/newLocationName"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginBottom="10dp"
+                 android:hint="Location Name"
+                 android:textColor="#ffffff"
+                 android:textColorHint="#ffffff"
+                 />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/newLocationName"
+                 android:id="@+id/newLocationDate"
+                 android:text="YYYY-MM-DD"
+                 android:textSize="20dp"
+                 android:textColor="#ffffff"
+                 />
+             <Space
+                 android:layout_width="170dp"
+                 android:layout_height="20dp"
+                 android:layout_below="@id/newLocationName"
+                 android:layout_toRightOf="@id/newLocationDate"
+                 android:layout_marginLeft="20dp"
+                 android:id="@+id/date_space"
+                 />
+             <Button
+                 android:layout_width="100dp"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/newLocationName"
+                 android:id="@+id/new_loc_date_dialog"
+                 android:layout_marginLeft="10dp"
+                 android:layout_alignParentEnd="true"
+                 android:text="Select"/>
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/newLocationTime"
+                 android:layout_below="@+id/newLocationDate"
+                 android:layout_marginTop="25dp"
+                 android:text="HH:MM:SS"
+                 android:textSize="20dp"
+                 android:textColor="#ffffff"
+                 />
+             <Space
+                 android:layout_width="170dp"
+                 android:layout_height="20dp"
+                 android:layout_below="@id/date_space"
+                 android:layout_toRightOf="@id/newLocationTime"
+                 android:layout_marginLeft="20dp"
+                 android:id="@+id/time_space"
+                 />
+             <Button
+                 android:layout_width="100dp"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/new_loc_date_dialog"
+                 android:id="@+id/new_loc_time_dialog"
+                 android:layout_marginLeft="10dp"
+                 android:layout_alignParentEnd="true"
+                 android:text="Select"/>
+
+
+
+         <Button
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/addLocationButton"
+             android:layout_below="@id/new_loc_time_dialog"
+             android:layout_marginTop="10dp"
+             android:layout_centerHorizontal="true"
+             android:text="Add new Location"
+             android:textSize="15sp"/>
+
+         </RelativeLayout>
+         <Button
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/addTripButton"
+             android:layout_below="@+id/location_add_group"
+             android:layout_marginTop="10dp"
+             android:layout_marginLeft="10dp"
+             android:text="Save Trip"
+             android:textSize="15sp"/>
+
+         <Button
+             android:layout_width="50dp"
+             android:layout_height="wrap_content"
+             android:id="@+id/trip_cancel_button"
+             android:layout_marginTop="10dp"
+             android:layout_marginLeft="150dp"
+             android:layout_below="@id/location_add_group"
+             android:layout_toRightOf="@id/addTripButton"
+             android:layout_alignParentEnd="true"
+             android:text="Cancel"
+             android:textSize="15sp"
+            />
+
+     </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
